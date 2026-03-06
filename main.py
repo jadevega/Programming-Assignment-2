@@ -49,6 +49,28 @@ def lru(k:int, requests: List[int]) -> int:
 
     return num_misses;
 
+
+def optff(k: int, requests: List[int]) -> int:
+    cache: Set[int] = set() #cache will be a set
+    num_misses = 0
+
+    for i, req in enumerate(requests):
+        if req in cache:
+            continue
+        else:
+            num_misses+=1
+        if(len(cache) < k):
+            cache.add(req);
+        else:
+            future_requests = requests[i+1:]
+            future_cache = {x: future_requests.index(x) if x in future_requests else float('inf') for x in cache}
+            farthest = max(future_cache, key=future_cache.get)
+            cache.remove(farthest)
+            cache.add(req)
+
+    return num_misses
+
+
 def main():
     if(len(sys.argv)) != 2:
         print("Needs to have following format: main.py <input_file>")
@@ -64,9 +86,11 @@ def main():
 
     num_fifo_miss = fifo(k, requests)
     num_lru_miss = lru(k, requests)
+    num_optff_miss = optff(k, requests)
 
     print("FIFO :", num_fifo_miss)
     print("LRU :", num_lru_miss)
+    print("OPTFF :", num_optff_miss)
 
 if __name__ == "__main__":
     main()
