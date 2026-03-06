@@ -72,7 +72,7 @@ def optff(k: int, requests: List[int]) -> int:
 
 
 def main():
-    if(len(sys.argv)) != 2:
+    if len(sys.argv) != 2:
         print("Needs to have following format: main.py <input_file>")
         return
 
@@ -88,8 +88,8 @@ def main():
     num_lru_miss = lru(k, requests)
     num_optff_miss = optff(k, requests)
 
-    print("FIFO :", num_fifo_miss)
-    print("LRU :", num_lru_miss)
+    print("FIFO  :", num_fifo_miss)
+    print("LRU   :", num_lru_miss)
     print("OPTFF :", num_optff_miss)
 
 if __name__ == "__main__":
