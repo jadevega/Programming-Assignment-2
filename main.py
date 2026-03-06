@@ -1,7 +1,6 @@
 import sys
 from typing import List, Set, Deque, Dict
 from collections import deque
-from optff import optff
 
 #takes a number of requests in caches with capacity k.
 def fifo(k: int, requests: List[int]) -> int:
