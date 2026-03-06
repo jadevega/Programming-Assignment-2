@@ -6,8 +6,8 @@ Valentina Esteban UFID: 99166716
 
 Instructions for running program:
 
-python main.py "input files"/<input_file>
+python main.py "input files/<input_file>"
 
 Ex:
-python main.py "input files"/input3
+python main.py "input files/input3"
 
