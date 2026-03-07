@@ -47,6 +47,7 @@ which evicts 4 every time it should be inserted. But 1, 2, and 3 are hits.
 So, this results with LRU having 12 misses and OPTFF having 4 misses. OPTFF is able
 to recognize that 1, 2, and 3 will be reused sooner than 4 making it incur strictly fewer
 misses than LRU or FIFO.
+
 3. The number of misses of OPTFF is no larger than that of (A), any offline algorithm that
 knows the full request sequence, on any fixed sequence due to an exchange argument.
 
